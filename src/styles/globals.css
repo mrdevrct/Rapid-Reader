@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+:root {
+  /* Primary Colors */
+  --color-primary-deep: #911a1a; /* قرمز تیره و اصیل */
+  --color-primary-main: #b30003; /* قرمز اصلی */
+  --color-primary-light: #c84042; /* قرمز روشن */
+  --color-primary-pale: #ff9697; /* قرمز کمرنگ */
+
+  /* Font */
+  --font-yekan: "Yekan Bakh", "IRANYekanWeb", sans-serif;
+}
+
+@theme inline {
+  --color-primary-deep: var(--color-primary-deep);
+  --color-primary-main: var(--color-primary-main);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-pale: var(--color-primary-pale);
+}
+
+@layer components {
+  .app-container {
+    @apply w-full max-w-[1280px] mx-auto;
+  }
+
+  .app-container.header-container {
+    @apply mb-0; /* Remove bottom margin for header */
+  }
+
+  .app-container.main-container {
+    @apply mb-14; /* Keep bottom margin for main content */
+  }
+
+  .fa-num {
+    font-family: "IRANYekanWeb", sans-serif !important;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .bottom-menu {
+    @apply fixed bottom-0 left-0 w-full z-10 rounded-t-4xl px-5 pt-3 pb-2 bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.1)] border-2;
+  }
+}
+
+
+body {
+  font-family: var(--font-yekan), sans-serif;
+  background-color: var(--background);
+}
+

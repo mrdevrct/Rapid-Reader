@@ -1,6 +1,6 @@
 // app/layout.tsx
 import { ReactNode } from "react";
-import "./globals.css";
+import "../styles/globals.css";
 
 export const metadata = {
   title: "آکادمی آنلاین - دوره‌های آموزشی",

@@ -3,7 +3,7 @@
 
 export default function Header() {
   return (
-    <header className="flex justify-center items-center gap-2.5 shrink-0 rounded-b-3xl bg-white h-14 py-3">
+    <header className="flex-center gap-2.5 shrink-0 rounded-b-3xl bg-white h-14 py-3">
       <div className="flex justify-between items-center w-full px-2.5">
         {/* منوی همبرگری سمت راست */}
         <div className="w-6 h-6 shrink-0 aspect-square">
