@@ -2,10 +2,9 @@ import banner from "../../../../public/images/banner.png";
 import ArticleCard from "./ArticleCard";
 import { ProductCarouselHeader } from "./ProductCarouselHeader";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 
 export default function ArticleSection() {
   const articels = [
@@ -46,7 +45,7 @@ export default function ArticleSection() {
     },
   ];
   return (
-    <div className="w-full mt-6" dir="rtl">
+    <div className="w-full mt-6 mb-4" dir="rtl">
       <ProductCarouselHeader title={"مقالات"} showTimer={false} />
 
       <Swiper

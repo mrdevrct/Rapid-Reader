@@ -15,7 +15,7 @@ export default function MobileBottomNav() {
   const [active, setActive] = useState("خانه");
 
   return (
-    <nav className="fixed bottom-4 left-0 right-0 flex justify-center z-50 md:hidden">
+    <nav className="fixed bottom-2 left-0 right-0 flex justify-center z-50 md:hidden">
       <div className="flex justify-center items-center gap-2 w-[369px] h-[64px] px-[14px] py-[13px] bg-white border border-[#747474] rounded-[32px] shadow-sm">
         {links.map((link) => {
           const activeLink = active === link.name;

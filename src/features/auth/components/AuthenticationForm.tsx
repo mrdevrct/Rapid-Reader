@@ -10,11 +10,6 @@ function LoginForm() {
   const [showOtpForm, setShowOtpForm] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  // تنظیم عنوان صفحه هنگام لود
-  useState(() => {
-    document.title = "ورود | ثبت نام - فروشگاه اینترنتی";
-  });
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const englishValue = persianToEnglishDigits(value);
@@ -88,7 +83,7 @@ function LoginForm() {
             </button>
             <button
               type="submit"
-              className="flex-1 font-bold bg-primary-deep text-white py-2 rounded-full hover:bg-primary-deep/90 transition text-lg"
+              className="flex-1 font-bold bg-primary-deep text-white py-2 rounded-full hover:bg-primary-main transition text-lg"
             >
               تأیید
             </button>
@@ -151,7 +146,7 @@ function LoginForm() {
 
         <button
           type="submit"
-          className="w-full font-bold bg-primary-deep text-white py-2 rounded-full hover:bg-primary-deep/90 transition mt-6 text-lg"
+          className="w-full font-bold bg-primary-deep text-white py-2 rounded-full hover:bg-primary-main transition mt-6 text-lg"
         >
           دریافت کد تأیید
         </button>

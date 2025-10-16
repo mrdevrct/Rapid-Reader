@@ -1,6 +1,8 @@
 // app/layout.tsx
 import { ReactNode } from "react";
 import "../styles/globals.css";
+import "../styles/fonts.css";
+import Providers from "./providers";
 
 export const metadata = {
   title: "آکادمی آنلاین - دوره‌های آموزشی",
@@ -54,33 +56,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           type="font/woff"
           crossOrigin="anonymous"
         />
-
-        {/* 🟢 Preload فونت‌های Yekan Bakh */}
-        <link
-          rel="preload"
-          href="/fonts/YekanBakh04Regular.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/YekanBakh05Medium.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/YekanBakh06Bold.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
       </head>
 
-      <body className="font-yekan h-full overflow-x-hidden">
-        {children}
+      <body className="font-iran h-full overflow-x-hidden">
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
 "use client";
-
 import ArticleSection from "@/features/home/components/ArticleSection";
 import { BannerSection } from "@/features/home/components/BannerSection";
 import { InfoBoxesSection } from "@/features/home/components/InfoBoxesSection";
@@ -13,7 +12,7 @@ import { WhiteContentBox } from "@/features/home/components/WhiteContentBox";
 // ------------------ Main Home Page ------------------
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center min-h-screen overflow-hidden">
+    <div className="flex flex-col items-center min-h-screen overflow-hidden -mt-14">
       <TopGradientBox />
       <WhiteContentBox>
         <LogoSection />
