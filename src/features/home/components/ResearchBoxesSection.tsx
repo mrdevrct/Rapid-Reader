@@ -3,10 +3,11 @@ import brainstorm from "../../../../public/images/brainstorm.png";
 
 export function ResearchBoxesSection() {
   return (
-    <div className="w-full mt-6">
-      <div className="flex gap-1 sm:gap-1.5 md:gap-2.5">
+    <div className="w-full mt-4">
+      {/* اسکرول افقی در موبایل */}
+      <div className="flex gap-2 sm:gap-3 md:gap-4 overflow-x-auto scrollbar-hide scroll-smooth py-1">
         {/* Box 1 */}
-        <div className="flex justify-center items-center gap-2.5 h-12 px-4 py-2 flex-1 rounded-[24px] bg-white shadow-[0_2px_4.4px_0_rgba(0,0,0,0.10)]">
+        <div className="flex-shrink-0 flex justify-center items-center gap-2.5 h-12 px-4 py-2 rounded-[24px] bg-white shadow-[0_2px_4.4px_0_rgba(0,0,0,0.10)] min-w-fit">
           <Image
             src={brainstorm}
             alt="brainstorm"
@@ -20,7 +21,7 @@ export function ResearchBoxesSection() {
         </div>
 
         {/* Box 2 */}
-        <div className="flex justify-center items-center gap-2.5 h-12 px-4 py-2 flex-1 rounded-[24px] bg-white shadow-[0_2px_4.4px_0_rgba(0,0,0,0.10)]">
+        <div className="flex-shrink-0 flex justify-center items-center gap-2.5 h-12 px-4 py-2 rounded-[24px] bg-white shadow-[0_2px_4.4px_0_rgba(0,0,0,0.10)] min-w-fit">
           <Image
             src={brainstorm}
             alt="brainstorm"
@@ -29,12 +30,12 @@ export function ResearchBoxesSection() {
             className="object-contain"
           />
           <span className="text-[#000] text-xs sm:text-sm font-bold">
-            ۴۲ هزار پژوه
+            ۴۸ هزار مقاله
           </span>
         </div>
 
         {/* Box 3 */}
-        <div className="flex justify-center items-center gap-2.5 h-12 px-4 py-2 flex-1 rounded-[24px] bg-white shadow-[0_2px_4.4px_0_rgba(0,0,0,0.10)]">
+        <div className="flex-shrink-0 flex justify-center items-center gap-2.5 h-12 px-4 py-2 rounded-[24px] bg-white shadow-[0_2px_4.4px_0_rgba(0,0,0,0.10)] min-w-fit">
           <Image
             src={brainstorm}
             alt="brainstorm"
@@ -43,7 +44,21 @@ export function ResearchBoxesSection() {
             className="object-contain"
           />
           <span className="text-[#000] text-xs sm:text-sm font-bold">
-            ۴۲ هزار پژوه
+            ۲۱ هزار پایان‌نامه
+          </span>
+        </div>
+
+        {/* Box 4 */}
+        <div className="flex-shrink-0 flex justify-center items-center gap-2.5 h-12 px-4 py-2 rounded-[24px] bg-white shadow-[0_2px_4.4px_0_rgba(0,0,0,0.10)] min-w-fit">
+          <Image
+            src={brainstorm}
+            alt="brainstorm"
+            width={24}
+            height={24}
+            className="object-contain"
+          />
+          <span className="text-[#000] text-xs sm:text-sm font-bold">
+            منابع آموزشی
           </span>
         </div>
       </div>

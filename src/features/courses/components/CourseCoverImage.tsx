@@ -1,7 +1,7 @@
 export function CourseCoverImage({ imageUrl }: { imageUrl: string }) {
   return (
     <div
-      className="w-full h-[200px] sm:h-[260px] lg:h-[360px] bg-cover bg-center shrink-0 relative -mt-4"
+      className="w-full h-[250px] sm:h-[310px] lg:h-[460px] bg-cover bg-center shrink-0 relative -mt-6"
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       {/* Overlay کمی تیره */}

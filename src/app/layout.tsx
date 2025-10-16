@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
 
-      <body className="font-iran h-full overflow-x-hidden">
+      <body className="font-iran h-full overflow-x-hidden bg-gray-100">
         <Providers>{children}</Providers>
       </body>
     </html>

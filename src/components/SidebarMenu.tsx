@@ -11,7 +11,6 @@ export default function SidebarMenu() {
     { href: "/", label: "خانه", icon: HomeIcon },
     { href: "/courses", label: "دوره‌ها", icon: CategoryIcon },
     { href: "/cart", label: "سبد خرید", icon: CartIcon },
-    { href: "/about", label: "درباره ما", icon: UserIcon },
     { href: "/terms", label: "قوانین و مقررات", icon: DocumentIcon },
     { href: "/about", label: "تماس با ما", icon: PhoneIcon },
   ];

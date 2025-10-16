@@ -3,7 +3,7 @@ export function InfoBoxesSection() {
     <div className="w-full mx-auto -mt-[150px] flex items-center justify-center">
       <div className="flex flex-row justify-center items-center gap-1 sm:gap-3 w-full max-w-[900px]">
         {/* Box 1 */}
-        <div className="flex items-center justify-center h-[48px] flex-1 px-2 py-[3px] gap-[5px] rounded-[8px] bg-[#5D5D5D]">
+        <div className="flex items-center justify-center h-10 flex-1 px-2  gap-1.5 rounded-lg bg-[#5D5D5D]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -20,13 +20,13 @@ export function InfoBoxesSection() {
               fill="white"
             />
           </svg>
-          <span className="text-white text-xs sm:text-sm font-bold">
+          <span className="text-white text-[10px] sm:text-sm font-bold">
             382 دوره‌ سازنده
           </span>
         </div>
 
         {/* Box 2 */}
-        <div className="flex items-center justify-center h-[48px] flex-1 px-2 py-[3px] gap-[5px] rounded-[8px] bg-[#5D5D5D]">
+        <div className="flex items-center justify-center h-10 flex-1 px-2  gap-1.5 rounded-lg bg-[#5D5D5D]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -43,13 +43,13 @@ export function InfoBoxesSection() {
               fill="white"
             />
           </svg>
-          <span className="text-white text-xs sm:text-sm font-bold">
+          <span className="text-white text-[10px] sm:text-sm  font-bold">
             156 مدرس فعال
           </span>
         </div>
 
         {/* Box 3 */}
-        <div className="flex items-center justify-center h-[48px] flex-1 px-2 py-[3px] gap-[5px] rounded-[8px] bg-[#5D5D5D]">
+        <div className="flex items-center justify-center h-10 flex-1 px-2  gap-1.5 rounded-lg bg-[#5D5D5D]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -66,7 +66,7 @@ export function InfoBoxesSection() {
               fill="white"
             />
           </svg>
-          <span className="text-white text-xs sm:text-sm font-bold">
+          <span className="text-white text-[10px] sm:text-sm font-bold">
             4,820 هنرجو
           </span>
         </div>

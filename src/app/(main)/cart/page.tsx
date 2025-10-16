@@ -124,7 +124,7 @@ export default function CartMain() {
   };
 
   return (
-    <main className="py-6 container mx-auto px-3 max-w-5xl bg-[#F7F7F7] rounded-t-3xl" dir="rtl">
+    <div className="mt-4 max-w-6xl mx-auto">
       <div className="text-center mb-6">
         <h1 className="text-2xl font-extrabold font-yekan text-gray-900 mb-2">
           سبد خرید
@@ -281,6 +281,6 @@ export default function CartMain() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 // app/(main)/courses/[slug]/components/CourseTitleAndStars.tsx
 export function CourseTitleAndStars({ title }: { title: string }) {
   return (
-    <div className="w-full flex justify-between items-center mt-2.5">
+    <div className="w-full flex justify-between items-center">
       <h1 className="text-xl font-extrabold text-right leading-none">{title}</h1>
       <div className="flex items-center gap-1">
         {/* Stars: 3 filled, 2 empty */}

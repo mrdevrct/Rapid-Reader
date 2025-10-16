@@ -3,35 +3,37 @@ import Image from "next/image";
 
 export function ProductCard({ image, title, price }: any) {
   return (
-    <div className="relative p-1.5 w-[170px] h-[190px] shrink-0 rounded-[16px] border border-[#D0D0D0] bg-white shadow-[0_2px_6px_rgba(0,0,0,0.05)] transition-transform duration-300 overflow-hidden">
+    <div className="relative shrink-0 rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden transition-transform duration-300 hover:shadow-md hover:scale-[1.02] w-[150px] h-[180px] sm:w-[160px] sm:h-[190px] md:w-[170px] md:h-[200px] lg:w-[180px] lg:h-[210px] xl:w-[190px] xl:h-[220px] px-1">
       {/* تصویر محصول */}
-      <div className="w-full h-[110px]">
+      <div className="w-full h-[60%]">
         <Image
           src={image}
           alt={title}
-          width={170}
-          height={110}
+          width={180}
+          height={120}
           quality={100}
-          className="w-full h-[110px] object-cover rounded-[12px]"
+          className="w-full h-full object-cover rounded-t-2xl"
         />
       </div>
 
       {/* جزئیات محصول */}
-      <div className="w-full flex-col px-2 pt-2 pb-1 flex justify-between text-right h-[calc(100%-110px)]">
+      <div className="flex flex-col justify-between h-[40%] px-2 pt-2 pb-1 text-right">
         <div>
-          <span className="text-[#000] font-['Yekan_Bakh'] text-[13px] font-bold leading-tight block truncate">
+          <span className="block text-xs sm:text-sm font-bold leading-tight truncate">
             {title}
           </span>
+
           <div className="flex items-center justify-between mt-2">
-            <span className="text-[#000] font-['Yekan_Bakh'] text-sm font-bold mt-[2px] block">
+            <span className="block text-[11px] sm:text-sm font-bold">
               {price}
             </span>
+
             {/* دکمه مشاهده بیشتر */}
-            <button className="flex items-center p-1 justify-center bg-[#B30003] rounded-[8px] transition-all hover:bg-[#cc0003]">
+            <button className="flex items-center justify-center p-1 bg-primary-main rounded-lg transition-all hover:bg-primary-deep">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="14"
+                height="14"
                 viewBox="0 0 8 8"
                 fill="none"
               >
