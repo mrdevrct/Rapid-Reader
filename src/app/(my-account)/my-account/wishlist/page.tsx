@@ -3,27 +3,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingCart } from "lucide-react";
+import productImage from "../../../../../public/images/course1.jpg"
+import { ProductCard } from "@/features/home/components/ProductCard";
+
 
 export default function WishlistPage() {
   // 🔹 در حالت واقعی، از سرور یا context گرفته می‌شود
   const wishlist = [
     {
-      id: 1,
-      name: "کرم آبرسان پوست خشک نیوآ",
-      price: 185000,
-      image: "/img/creame.svg",
+      image: productImage,
+      title: "Happy Feathers",
+      price: "۳۰۰,۰۰۰ تومان",
+      slug: "happy-feathers",
     },
     {
-      id: 2,
-      name: "کاندوم تاخیری مدل Ultra Feel",
-      price: 89000,
-      image: "/img/candom.png",
+      image: productImage,
+      title: "Strong Steeds",
+      price: "۵۰۰,۰۰۰ تومان",
+      slug: "strong-steeds",
     },
     {
-      id: 3,
-      name: "شامپو ضد ریزش مو",
-      price: 145000,
-      image: "/img/zibayi.png",
+      image: productImage,
+      title: "Golden Care",
+      price: "۴۰۰,۰۰۰ تومان",
+      slug: "golden-care",
+    },
+    {
+      image: productImage,
+      title: "Silver Shine",
+      price: "۳۵۰,۰۰۰ تومان",
+      slug: "silver-shine",
+    },
+    {
+      image: productImage,
+      title: "Bright Minds",
+      price: "۴۲۰,۰۰۰ تومان",
+      slug: "bright-minds",
+    },
+    {
+      image: productImage,
+      title: "Premium Plus",
+      price: "۴۸۰,۰۰۰ تومان",
+      slug: "premium-plus",
     },
   ];
 
@@ -54,42 +75,9 @@ export default function WishlistPage() {
           </Link>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-4">
-          {wishlist.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden"
-            >
-              <Link href={`/product/${item.id}`}>
-                <div className="relative w-full h-[140px]">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              </Link>
-              <div className="p-3 text-right flex flex-col gap-2">
-                <h3 className="text-sm font-medium text-gray-800 line-clamp-2 leading-5 h-[2.6em]">
-                  {item.name}
-                </h3>
-                <p className="text-[#6EAC8B] font-medium text-sm fa-num">
-                  {Number(item.price).toLocaleString("fa-IR")} تومان
-                </p>
-                <div className="flex justify-between items-center mt-auto">
-                  <button className="bg-[#6EAC8B] hover:bg-[#5A9472] text-white p-1.5 rounded-full transition-colors">
-                    <ShoppingCart className="w-4 h-4" />
-                  </button>
-                  <button
-                    className="text-red-500 hover:text-red-600 p-1"
-                    title="حذف از علاقه‌مندی‌ها"
-                  >
-                    <Heart className="w-5 h-5 fill-current" />
-                  </button>
-                </div>
-              </div>
-            </div>
+        <div className="grid grid-cols-3 gap-4">
+          {wishlist.map((product) => (
+            <ProductCard {...product} key={product.slug}/>
           ))}
         </div>
       )}
