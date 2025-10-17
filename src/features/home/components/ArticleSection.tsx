@@ -75,6 +75,7 @@ export default function ArticleSection() {
           >
             <div className="transform hover:scale-[1.03] transition-all duration-300">
               <ArticleCard
+                id={art.id}
                 title={art.title}
                 description={art.description}
                 image={banner.src}
