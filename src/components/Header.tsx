@@ -49,7 +49,9 @@ export default function Header() {
       </button>
 
       {/* Title */}
-      <div className="text-primary-deep text-xl font-black">تندخوان برتر</div>
+      <Link href="/" className="text-primary-deep text-xl font-black">
+        تندخوان برتر
+      </Link>
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex items-center gap-8 text-gray-700 font-medium">
@@ -78,7 +80,7 @@ export default function Header() {
         </div>
 
         {/* Cart Icon */}
-        <div className="w-8 h-8 flex items-center justify-center relative">
+        <Link href="/cart" className="w-8 h-8 flex items-center justify-center relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -95,7 +97,7 @@ export default function Header() {
           <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1.5">
             2
           </span>
-        </div>
+        </Link>
       </div>
     </header>
   );

@@ -30,7 +30,7 @@ export function CourseActionsAfterPurchase({
 
   return (
     <>
-      <div className="w-full flex justify-between gap-4 mt-4.5">
+      <div className="w-full flex justify-center gap-4 mt-4.5">
         {/* Ticket Box */}
         <button
           onClick={() => setIsTicketModalOpen(true)}

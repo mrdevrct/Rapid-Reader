@@ -16,12 +16,42 @@ export function ProductCarousel({
   showTimer?: boolean;
 }) {
   const products = [
-    { image: productImage, title: "Happy Feathers", price: "۳۰۰,۰۰۰ تومان" },
-    { image: productImage, title: "Strong Steeds", price: "۵۰۰,۰۰۰ تومان" },
-    { image: productImage, title: "Golden Care", price: "۴۰۰,۰۰۰ تومان" },
-    { image: productImage, title: "Silver Shine", price: "۳۵۰,۰۰۰ تومان" },
-    { image: productImage, title: "Bright Minds", price: "۴۲۰,۰۰۰ تومان" },
-    { image: productImage, title: "Premium Plus", price: "۴۸۰,۰۰۰ تومان" },
+    {
+      image: productImage,
+      title: "Happy Feathers",
+      price: "۳۰۰,۰۰۰ تومان",
+      slug: "happy-feathers",
+    },
+    {
+      image: productImage,
+      title: "Strong Steeds",
+      price: "۵۰۰,۰۰۰ تومان",
+      slug: "strong-steeds",
+    },
+    {
+      image: productImage,
+      title: "Golden Care",
+      price: "۴۰۰,۰۰۰ تومان",
+      slug: "golden-care",
+    },
+    {
+      image: productImage,
+      title: "Silver Shine",
+      price: "۳۵۰,۰۰۰ تومان",
+      slug: "silver-shine",
+    },
+    {
+      image: productImage,
+      title: "Bright Minds",
+      price: "۴۲۰,۰۰۰ تومان",
+      slug: "bright-minds",
+    },
+    {
+      image: productImage,
+      title: "Premium Plus",
+      price: "۴۸۰,۰۰۰ تومان",
+      slug: "premium-plus",
+    },
   ];
 
   return (
