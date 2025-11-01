@@ -1,12 +1,24 @@
-import banner from "../../../../public/images/banner.png";
+import Image from "next/image";
 
-export function BannerSection() {
+export function BannerSection({
+  banner,
+}: {
+  banner: { id: number; src: string };
+}) {
   return (
     <div className="w-full mt-6">
-      <div
-        className="w-full h-[156px] flex-shrink-0 rounded-[24px]"
+      <Image
+        key={banner.id}
+        src={banner.src}
+        alt="بنر تبلیغاتی"
+        width={1200}
+        height={156} // ارتفاع واقعی تصویر اصلی (مثلاً 156px)
+        className="w-full h-[156px] rounded-3xl object-cover"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+        quality={95}
+        priority
         style={{
-          background: `linear-gradient(0deg, #911A1A 0%, #911A1A 100%), url(${banner.src}) lightgray 0px -128.717px / 100% 236.538% no-repeat`,
+          aspectRatio: "1200 / 156", // دقیقاً با height هماهنگ
         }}
       />
     </div>

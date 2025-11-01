@@ -23,7 +23,7 @@ export default function BlogCard({ blog, variant = "default" }: BlogCardProps) {
   if (variant === "compact") {
     return (
       <Link
-        href={`/blog/${blog.slug}`}
+        href={`/posts/${blog.slug}`}
         className="block bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition h-[320px] sm:h-[340px] flex flex-col"
       >
         {/* 🖼 تصویر مقاله */}
@@ -58,7 +58,7 @@ export default function BlogCard({ blog, variant = "default" }: BlogCardProps) {
   // حالت پیش‌فرض (برای صفحه بلاگ‌ها)
   return (
     <Link
-      href={`/blog/${blog.slug}`}
+      href={`/posts/${blog.slug}`}
       className="block bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 hover:scale-[1.02]"
     >
       {/* 🖼 تصویر مقاله */}

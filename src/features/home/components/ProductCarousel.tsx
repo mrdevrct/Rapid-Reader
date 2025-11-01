@@ -3,57 +3,20 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 import { ProductCarouselHeader } from "./ProductCarouselHeader";
-import productImage from "../../../../public/images/productImage.png";
 import { ProductCard } from "./ProductCard";
-import "swiper/css";
+import { Product } from "@/features/courses/types/product.type";
 import "swiper/css/effect-coverflow";
+import "swiper/css";
 
 export function ProductCarousel({
   title,
+  products,
   showTimer = true,
 }: {
   title: string;
+  products: Product[];
   showTimer?: boolean;
 }) {
-  const products = [
-    {
-      image: productImage,
-      title: "Happy Feathers",
-      price: "۳۰۰,۰۰۰ تومان",
-      slug: "happy-feathers",
-    },
-    {
-      image: productImage,
-      title: "Strong Steeds",
-      price: "۵۰۰,۰۰۰ تومان",
-      slug: "strong-steeds",
-    },
-    {
-      image: productImage,
-      title: "Golden Care",
-      price: "۴۰۰,۰۰۰ تومان",
-      slug: "golden-care",
-    },
-    {
-      image: productImage,
-      title: "Silver Shine",
-      price: "۳۵۰,۰۰۰ تومان",
-      slug: "silver-shine",
-    },
-    {
-      image: productImage,
-      title: "Bright Minds",
-      price: "۴۲۰,۰۰۰ تومان",
-      slug: "bright-minds",
-    },
-    {
-      image: productImage,
-      title: "Premium Plus",
-      price: "۴۸۰,۰۰۰ تومان",
-      slug: "premium-plus",
-    },
-  ];
-
   return (
     <div className="w-full mt-6">
       <ProductCarouselHeader title={title} showTimer={showTimer} />
@@ -79,13 +42,13 @@ export function ProductCarousel({
           modules={[EffectCoverflow]}
           className="mySwiper !overflow-visible"
         >
-          {products.map((p, i) => (
+          {products.map((product, i) => (
             <SwiperSlide
               key={i}
               className="!w-[180px] flex justify-center transition-transform duration-300"
             >
               <div className="transform hover:scale-[1.03] transition-all duration-300">
-                <ProductCard {...p} />
+                <ProductCard product={product} />
               </div>
             </SwiperSlide>
           ))}
@@ -116,10 +79,10 @@ export function ProductCarousel({
             },
           }}
         >
-          {products.map((p, i) => (
+          {products.map((product, i) => (
             <SwiperSlide key={i} className="!w-auto flex justify-center">
               <div className="transition-transform duration-300 hover:scale-[1.03]">
-                <ProductCard {...p} />
+                <ProductCard product={product} />
               </div>
             </SwiperSlide>
           ))}

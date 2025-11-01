@@ -12,7 +12,7 @@ export default function SidebarMenu() {
     { href: "/courses", label: "دوره‌ها", icon: CategoryIcon },
     { href: "/cart", label: "سبد خرید", icon: CartIcon },
     { href: "/terms", label: "قوانین و مقررات", icon: DocumentIcon },
-    { href: "/blog", label: "مقالات", icon: DocumentIcon },
+    { href: "/posts", label: "مقالات", icon: DocumentIcon },
     { href: "/about", label: "تماس با ما", icon: PhoneIcon },
   ];
 

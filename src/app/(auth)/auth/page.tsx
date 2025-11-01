@@ -1,4 +1,4 @@
-import AuthenticationForm from "@/features/auth/components/AuthenticationForm";
+import AuthenticationForm from "@/features/auth/components/LoginForm";
 
 function AuthPage() {
   return <AuthenticationForm />;

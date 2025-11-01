@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -24,7 +23,7 @@ export default function Header() {
       ${
         isSticky
           ? "bg-white/90 shadow-lg translate-y-0"
-          : "bg-white/100 shadow-none"
+          : "bg-white shadow-none"
       }
       `}
     >
@@ -57,8 +56,8 @@ export default function Header() {
       <nav className="hidden lg:flex items-center gap-8 text-gray-700 font-medium">
         <Link href="/">خانه</Link>
         <Link href="/courses">دوره‌ها</Link>
-        <Link href="/rules">قوانین و مقررات</Link>
-        <Link href="/contact">ارتباط با ما</Link>
+        <Link href="/terms">قوانین و مقررات</Link>
+        <Link href="/about">درباره ما</Link>
       </nav>
 
       {/* Icons Section */}

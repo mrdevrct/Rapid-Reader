@@ -1,49 +1,14 @@
+"use client";
 import banner from "../../../../public/images/banner.png";
 import ArticleCard from "./ArticleCard";
 import { ProductCarouselHeader } from "./ProductCarouselHeader";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
+import { Post } from "@/features/posts/types/post.type";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
-export default function ArticleSection() {
-  const articels = [
-    {
-      id: 1,
-      title: "افزایش تمرکز ذهنی در کار",
-      description:
-        "در این مقاله به بررسی روش‌های تقویت تمرکز ذهنی و افزایش بازدهی در محیط کار می‌پردازیم...",
-      image: banner,
-    },
-    {
-      id: 2,
-      title: "افزایش تمرکز ذهنی در کار",
-      description:
-        "در این مقاله به بررسی روش‌های تقویت تمرکز ذهنی و افزایش بازدهی در محیط کار می‌پردازیم...",
-      image: banner,
-    },
-    {
-      id: 3,
-      title: "افزایش تمرکز ذهنی در کار",
-      description:
-        "در این مقاله به بررسی روش‌های تقویت تمرکز ذهنی و افزایش بازدهی در محیط کار می‌پردازیم...",
-      image: banner,
-    },
-    {
-      id: 4,
-      title: "افزایش تمرکز ذهنی در کار",
-      description:
-        "در این مقاله به بررسی روش‌های تقویت تمرکز ذهنی و افزایش بازدهی در محیط کار می‌پردازیم...",
-      image: banner,
-    },
-    {
-      id: 5,
-      title: "افزایش تمرکز ذهنی در کار",
-      description:
-        "در این مقاله به بررسی روش‌های تقویت تمرکز ذهنی و افزایش بازدهی در محیط کار می‌پردازیم...",
-      image: banner,
-    },
-  ];
+export default function ArticleSection({ posts }: { posts: Post[] }) {
   return (
     <div className="w-full mt-6 mb-4" dir="rtl">
       <ProductCarouselHeader title={"مقالات"} showTimer={false} />
@@ -68,17 +33,17 @@ export default function ArticleSection() {
         modules={[EffectCoverflow]}
         className="mySwiper mt-4 !overflow-visible"
       >
-        {articels.map((art, i) => (
+        {posts.map((art, i) => (
           <SwiperSlide
             key={i}
             className="!w-[180px] flex justify-center transition-transform duration-300"
           >
             <div className="transform hover:scale-[1.03] transition-all duration-300">
               <ArticleCard
-                id={art.id}
+                id={art.ID}
                 title={art.title}
-                description={art.description}
-                image={banner.src}
+                description={art.excerpt}
+                image={art.thumbnail?.url || banner.src}
               />
             </div>
           </SwiperSlide>

@@ -2,7 +2,7 @@
 
 export default function Terms() {
   return (
-    <main className="py-6 sm:py-8 container mx-auto px-4 max-w-5xl mt-12">
+    <main className="container mx-auto max-w-5xl mt-6 md:mt-8 lg:mt-10">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
@@ -15,7 +15,7 @@ export default function Terms() {
       </div>
 
       {/* Usage Rules Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5 mb-8">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 mb-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function Terms() {
       </section>
 
       {/* Registration Conditions Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5 mb-8">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 mb-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ export default function Terms() {
       </section>
 
       {/* Refund Policy Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5 mb-8">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 mb-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ export default function Terms() {
       </section>
 
       {/* User Responsibilities Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5 mb-8">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 mb-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"

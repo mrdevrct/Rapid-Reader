@@ -1,12 +1,11 @@
-"use client";
+export const dynamic = "force-dynamic";
 
-import ProfileUi from "@/features/profile/ui/ProfileUi";
+import MyAccount from "@/features/my-account/components/MyAccount";
 
-
-function ProfilePage() {
+function MyAccountPage() {
   return (
-    <ProfileUi/>
+    <MyAccount/>
   );
 }
 
-export default ProfilePage;
+export default MyAccountPage;

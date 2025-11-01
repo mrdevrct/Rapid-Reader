@@ -26,7 +26,7 @@ export default function ArticleCard({
           {description}
         </p>
       </div>
-      <Link href={`/blog/${id}`}>
+      <Link href={`/posts/${id}`}>
         <button className="absolute bottom-[8px] left-[8px] inline-flex py-1 px-2 justify-center items-center gap-[4px] bg-white/25 backdrop-blur-sm rounded-[8px] transition-all hover:bg-white/40">
           <span className="text-white text-[11px] font-bold font-[Yekan_Bakh]">
             مشاهده بیشتر

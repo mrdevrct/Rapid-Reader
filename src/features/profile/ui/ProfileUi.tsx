@@ -1,5 +1,4 @@
 import {
-  LogOut,
   Heart,
   ShoppingCart,
   Ticket,
@@ -12,10 +11,6 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import ListItem from "./ListItem";
 
 function ProfileUi() {
-  const handleLogout = () => {
-    console.log("User logged out");
-  };
-
   return (
     <>
       {/* services */}

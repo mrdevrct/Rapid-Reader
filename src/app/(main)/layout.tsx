@@ -16,7 +16,7 @@ export default function MainLayout({
       </div>
 
       {/* Main Content - Full Height with Scroll */}
-      <main className="app-container flex-1 pb-20 pt-14">{children}</main>
+      <main className="app-container flex-1 pb-20 pt-15">{children}</main>
 
       {/* Mobile Bottom Navigation (Fixed at bottom on mobile) */}
       <MobileBottomNav />

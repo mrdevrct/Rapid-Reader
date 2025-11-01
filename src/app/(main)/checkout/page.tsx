@@ -57,7 +57,7 @@ export default function CheckoutMain() {
     payment: "online",
   });
 
-  const [finalTotal, setFinalTotal] = useState<number>(8990000);
+  const [finalTotal] = useState<number>(8990000);
   const [toast, setToast] = useState<Toast>({
     visible: false,
     message: "",

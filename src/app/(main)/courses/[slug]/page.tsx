@@ -1,97 +1,50 @@
-import { CourseActionsAfterPurchase } from "@/features/courses/components/CourseActionsAfterPurchase";
-import { CourseCoverImage } from "@/features/courses/components/CourseCoverImage";
-import { CourseDetailsSwiper } from "@/features/courses/components/CourseDetailsSwiper";
-import { CoursePriceAndButton } from "@/features/courses/components/CoursePriceAndButton";
-import { CourseSectionsAccordion } from "@/features/courses/components/CourseSectionsAccordion";
-import { CourseShortDescription } from "@/features/courses/components/CourseShortDescription";
-import { CourseTitleAndStars } from "@/features/courses/components/CourseTitleAndStars";
-import { ProgressBar } from "@/features/courses/components/ProgressBar";
-import { ReviewsAccordion } from "@/features/courses/components/ReviewsAccordion";
-
-// تعریف اینترفیس برای Worksheet
-interface Worksheet {
-  title: string;
-  questions: { text: string; type: "number" | "checkbox" }[];
-}
-
-// تعریف اینترفیس برای نوع داده بازگشتی getCourseData
-interface CourseData {
-  slug: string;
-  title: string;
-  coverImage: string;
-  isPurchased: boolean;
-  progress: number;
-  worksheets: Worksheet[];
-  answers: { [date: string]: { [worksheetIndex: string]: { [questionIndex: string]: string } } };
-  maxAllowedSubmissions: number;
-}
-
-// تابع برای دریافت داده‌های دوره
-async function getCourseData(slug: string): Promise<CourseData> {
-  return {
-    slug,
-    title: "دوره جامع تندخوانی",
-    coverImage: "/images/course1.jpg",
-    isPurchased: true, // شبیه‌سازی حالت خریداری‌شده
-    progress: 75, // شبیه‌سازی درصد پیشرفت
-    worksheets: [
-      {
-        title: "کاربرگ ۱: تمرین سرعت خواندن",
-        questions: [
-          { text: "تعداد کلمات خوانده‌شده در دقیقه؟", type: "number" as const },
-          { text: "آیا تمرین را کامل کردید؟", type: "checkbox" as const },
-        ],
-      },
-      {
-        title: "کاربرگ ۲: درک مطلب",
-        questions: [
-          { text: "امتیاز درک مطلب شما؟", type: "number" as const },
-          { text: "متن را به‌خوبی درک کردید؟", type: "checkbox" as const },
-        ],
-      },
-    ],
-    answers: {
-      "2025-10-16": {
-        "0": { "0": "200", "1": "true" }, // پاسخ‌های کاربرگ ۱
-        "1": { "0": "85", "1": "true" }, // پاسخ‌های کاربرگ ۲
-      },
-    },
-    maxAllowedSubmissions: 3, // حداکثر تعداد ارسال‌های مجاز
-  };
-}
+// src/app/course/[slug]/page.tsx
+import { ProductServiceServer } from "@/features/courses/api/productService";
+import { CourseActionsAfterPurchase } from "@/features/courses/components/list/CourseActionsAfterPurchase";
+import { CourseCoverImage } from "@/features/courses/components/list/CourseCoverImage";
+import { CoursePriceAndButton } from "@/features/courses/components/list/CoursePriceAndButton";
+import { CourseTitleAndStars } from "@/features/courses/components/list/CourseTitleAndStars";
+import { ProgressBar } from "@/features/courses/components/list/ProgressBar";
 
 export default async function CoursePage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const course = await getCourseData(params.slug);
+  const product = await ProductServiceServer.getSingleProductServer(params.slug);
+  const { worksheets, max_allowed_submissions } = await ProductServiceServer.getWorksheetsServer(
+    product.id
+  );
+
+  // ۳. دریافت تیکت (اختیاری)
+  // const ticket = await ProductServiceServer.getTicketServer(product.id);
+
+  // ۴. دریافت سکشن‌ها (اختیاری)
+  // const sections = await ProductServiceServer.getSectionsServer(product.id);
 
   return (
     <div className="flex flex-col items-center min-h-screen overflow-hidden -mt-3.5">
-      <CourseCoverImage imageUrl={course.coverImage} />
+      <CourseCoverImage imageUrl={product.image || "/fallback.jpg"} />
       <div className="relative w-full -mt-5 flex-1 bg-white rounded-t-3xl flex flex-col items-center px-3 py-2.5">
-        {/* عنوان دوره و امتیازات */}
-        <CourseTitleAndStars title={course.title} />
+        <CourseTitleAndStars title={product.name} />
 
-        {/* نوار پیشرفت (فقط در صورت خریداری‌شده نمایش داده می‌شود) */}
-        {course.isPurchased && <ProgressBar progress={course.progress} />}
+        {product.has_purchased && <ProgressBar progress={75} /> /* بعداً از API */}
 
-        {/* دکمه‌های خرید یا اقدامات پس از خرید */}
-        {course.isPurchased ? (
+        {product.has_purchased ? (
           <CourseActionsAfterPurchase
-            worksheets={course.worksheets}
-            answers={course.answers}
-            maxAllowedSubmissions={course.maxAllowedSubmissions}
+            worksheets={worksheets}
+            answers={{}} // بعداً از API کاربر
+            maxAllowedSubmissions={max_allowed_submissions}
           />
         ) : (
-          <CoursePriceAndButton price={2_000_000} oldPrice={3_000_000} />
+          <CoursePriceAndButton
+            price={parseInt(product.regular_price) || 0}
+            oldPrice={product.sale_price ? parseInt(product.sale_price) : undefined}
+          />
         )}
 
-        <CourseDetailsSwiper />
-        <CourseShortDescription />
-        <CourseSectionsAccordion />
-        <ReviewsAccordion />
+        {/* <CourseSectionsAccordion sections={sections.sections} /> */}
+        {/* <ReviewsAccordion /> */}
       </div>
     </div>
   );

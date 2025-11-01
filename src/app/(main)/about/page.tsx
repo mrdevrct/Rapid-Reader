@@ -23,7 +23,7 @@ export default function AboutUs() {
   };
 
   return (
-    <main className="py-6 sm:py-8 container mx-auto px-4 max-w-5xl mt-10">
+    <div className="container mx-auto px-4 max-w-5xl mt-6 md:mt-8 lg:mt-10">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">درباره ما</h1>
@@ -33,7 +33,7 @@ export default function AboutUs() {
       </div>
 
       {/* About Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5 mb-8">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 mb-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ export default function AboutUs() {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5 mb-8">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 mb-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ export default function AboutUs() {
       </section>
 
       {/* Team Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5 mb-8">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 mb-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +131,7 @@ export default function AboutUs() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4 sm:p-5">
+      <section className="bg-gray-50 border border-neutral-200 rounded-2xl p-4">
         <h2 className="text-base sm:text-lg font-extrabold mb-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -225,6 +225,6 @@ export default function AboutUs() {
           <span>{toast.message}</span>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
